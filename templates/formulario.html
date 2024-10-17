@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Asistentes</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #e0f7fa;
+          margin: 0;
+          padding: 20px;
+      }
+      .container {
+          max-width: 600px;
+          margin: auto;
+          background: #ffffff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+          text-align: center;
+          color: #00796b;
+      }
+      label {
+          display: block;
+          margin: 10px 0 5px;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="email"],
+      input[type="password"],
+      select {
+          width: 100%;
+          padding: 10px;
+          margin: 5px 0 20px;
+          border: 1px solid #00796b;
+          border-radius: 5px;
+      }
+      input[type="submit"],
+      button {
+          background-color: #00796b;
+          color: white;
+          border: none;
+          cursor: pointer;
+          padding: 10px;
+          width: 48%;
+          border-radius: 5px;
+          margin: 5px 1%;
+          display: inline-block;
+      }
+      input[type="submit"]:hover,
+      button:hover {
+          background-color: #004d40;
+      }
+      .button-container {
+          text-align: center;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <h1>Registro de Asistentes</h1>
+      <form method="POST">
+          <label for="tipo">Tipo:</label>
+          <select name="tipo" id="tipo" required>
+              <option value="Estudiante">Estudiante</option>
+              <option value="Docente">Docente</option>
+              <option value="Profesional">Profesional</option>
+          </select>
+
+          <label for="nombres">Nombres:</label>
+          <input type="text" id="nombres" name="nombres" required>
+
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" name="apellidos" required>
+
+          <label for="edad">Edad:</label>
+          <input type="number" id="edad" name="edad" required>
+
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" name="correo" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <div class="button-container">
+              <input type="submit" value="Registrar">
+              <button type="button">Limpiar</button>
+              <button type="button">Cancelar</button>
+          </div>
+      </form>
+  </div>
+</body>
+</html>

@@ -6,11 +6,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///asistentes.db'
 db = SQLAlchemy(app)
 
 class Asistente(db.Model):
+    __tablename__ = 'asistente'  # Corrected here
     id = db.Column(db.Integer, primary_key=True)
     tipo = db.Column(db.String(20), nullable=False)
     nombres = db.Column(db.String(100), nullable=False)
     apellidos = db.Column(db.String(100), nullable=False)
-    edad = db.Column(db.Integer, nullable=False)
+    universidad = db.Column(db.String(100), nullable=False)
     correo = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
 
@@ -21,7 +22,7 @@ def registro():
             tipo=request.form['tipo'],
             nombres=request.form['nombres'],
             apellidos=request.form['apellidos'],
-            edad=int(request.form['edad']),
+            universidad=request.form['universidad'],
             correo=request.form['correo'],
             password=request.form['password']
         )
